@@ -1,0 +1,75 @@
+@import "tailwindcss";
+/* tailwind.css */
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+:root {
+  overflow-x: hidden;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  background: #000000d6;
+
+  --header: 4rem;
+  --sub-header: 1.5rem;
+
+}
+.watermark {
+    font-family: system-ui, "Segoe UI Light", "Tahoma", "Noto Sans", sans-serif;
+    color: #bbb;
+    position: fixed;
+    bottom: 38px;
+    right: 50px;
+    opacity: .4;
+    font-weight: 300;
+    z-index: 99999;
+    text-shadow: 0.2px 0.2px 0.2px black;
+    pointer-events: none;
+}
+
+.watermark h1 {
+    font-size: 21px;
+}
+
+.watermark h3 {
+    font-size: 16px;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(80%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.fadeInUp {
+    animation: 0.5s fadeInUp;
+}
+
+.fadeInUpLong{
+    animation: 1s fadeInUp;
+}
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.fadeInDown {
+    animation: 0.5s fadeInDown;
+}

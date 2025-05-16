@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
+
+import Home from "./pages/Home";
+import NotFound from "./NotFound";
+import History from "./pages/History";
+import Machines from "./pages/Machines";
+import Impact from "./pages/Impact";
+import Turing from "./pages/Turing";
+import Rejewski from "./pages/Rejewski";
+import Resources from "./pages/Resources";
+import Bibliography from "./pages/Bibliography";
+import Admin from "./pages/Admin";
+import Activate from "./components/Activate";
+
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Activate />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/machines" element={<Machines />} />
+        <Route path="/impact" element={<Impact />} />
+        <Route path="/turing" element={<Turing />} />
+        <Route path="/rejewski" element={<Rejewski />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/bibliography" element={<Bibliography />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
-
-export default App
