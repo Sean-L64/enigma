@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import TopScroll from "./TopScroll";
 import "../css/navbar.scss"
