@@ -1,8 +1,8 @@
 function Activate() {
     return(
         <div className="watermark">
-            <h1>Activate Windows</h1>
-            <h3>Go to Settings to activate Windows.</h3>
+            <h1>Activate Enigma</h1>
+            <h3>Go to Settings to activate Enigma.</h3>
         </div>
     )
 }

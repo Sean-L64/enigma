@@ -14,14 +14,18 @@ export default function Rejewski() {
 
             </div>
             <div className="flex template-layout justify-center flex-wrap ">
-
+{/* more clarification needed */}
                <img src={Marian} className="flex  templates rounded-2xl fadeInUp" />
                <p className="flex templates desc border-white border-4 rounded-xl p-8 text-2xl tracking-wide text-shadow-sm/45 text-white fadeInUp">
                      Marian Rejewski was a Polish mathematician and the first person to break Enigma.
+                     He and other mathematicians were able to identify patterns in the Enigma Machine which reduced the day
+                     key combinations from about 10 quadrillion to 105,456 more specifically: 17,576 scramber settings
+                     by 6 possible scrambler arrangements. Thanks to the replica Enigma machines, he and his team spent a year
+                     creating a catalog that simplified the decryption process and settings.
                      Starting 1932, Marian Rejewski led a small team of Polish mathematician-cryptanalysts
-                     had succeeded in deducing the internal wiring in Enigma and created the Bomba machine in 1938. 
-                     The machine was rendered useless in May 1940 following changes in the German operating procedures
-                     it depeneded on.
+                     had succeeded in deducing the internal wiring in Enigma or in other words.
+                     That same year, the Poles cracked Enigma leading him and his team to create the Bomba machine in 1938. 
+                     
                </p>
 
             </div>

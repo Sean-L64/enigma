@@ -1,57 +1,62 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
 import { useState, useEffect } from "react";
+import ScrambledText from "./Scramble";
+
 
 export interface ObserverProps { //takes the following as inputs when Observer component is used externally
-  visibility: number;
-  time: number;
-  start: number;
-  end: number;
-  text: string;
-  className?: string;
-  id?: string;
+    visibility: number;
+    time: number;
+    start: number;
+    end: number;
+    text: string;
+    className?: string;
+    id?: string;
 
 }
 export default function Observer(props: ObserverProps) {
     const { visibility, time, start, end, text, className, id } = props;
-  
+
     const { ref, inView } = useInView({
-      triggerOnce: true, // Trigger only once when the element comes into view
-      threshold: visibility,
+        triggerOnce: true, // Trigger only once when the element comes into view
+        threshold: visibility,
     });
-  
+
     // Debounce the inView state
     const [debouncedInView, setDebouncedInView] = useState(inView);
     useEffect(() => {
-      const timeout = setTimeout(() => {
-        setDebouncedInView(inView);
-      }, 100); // Delay of 100ms to debounce
-      
-      return () => clearTimeout(timeout); // Cleanup on unmount
+        const timeout = setTimeout(() => {
+            setDebouncedInView(inView);
+        }, 100); // Delay of 100ms to debounce
+
+        return () => clearTimeout(timeout); // Cleanup on unmount
     }, [inView]);
-  
+
     // Define animation variants
     const variants = {
-      hidden: { opacity: 0, y: start },
-      visible: { opacity: 1, y: end },
+        hidden: { opacity: 0, y: start },
+        visible: { opacity: 1, y: end },
     };
-  
+
     return (
-      <motion.div
-        className={className}
-        id={id}
-        ref={ref}
-        initial="hidden"
-        animate={debouncedInView ? "visible" : "hidden"}
-        transition={{ duration: time, ease: "easeOut" }}
-        variants={variants}
-        layout
-        style={{ willChange: "opacity, transform" }}  // Helps optimize animation
-      >
-        {text}
-      </motion.div>
+        <motion.div
+            className={className}
+            id={id}
+            ref={ref}
+            initial="hidden"
+            animate={debouncedInView ? "visible" : "hidden"}
+            transition={{ duration: time, ease: "easeOut" }}
+            variants={variants}
+            layout
+            style={{ willChange: "opacity, transform" }}  // Helps optimize animation
+        >
+            <ScrambledText
+                text={text}
+                speed={30}
+            />
+        </motion.div>
     );
-  }
+}
 
 {/* <motion.h3 
                     id="page-banner-title" 

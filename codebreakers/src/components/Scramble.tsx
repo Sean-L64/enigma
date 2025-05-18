@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface ScrambledTextProps {
   text: string;
   className?: string;
+  id?: string;
   speed?: number; // Optional, ms per frame
   step?: number;  // Optional, not used in current logic but could be for batching
 }
 
 // const ScrambledText: React.FC<ScrambledTextProps> = ({ text, speed = 50 }) => {
 
-export default function ScrambledText(props: ScrambledTextProps ){
-  const {text, speed, className} = props;
+
+export default function ScrambledText({ text, speed , className }: ScrambledTextProps) {
   const [displayedText, setDisplayedText] = useState('');
   const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!<>-_/[]{}—=+*^?#________';
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
+    if (!inView) return; // Only start animation when in viewport
+
     let frame = 0;
     const queue = text.split('').map((char) => ({
       from: randomChar(),
@@ -54,8 +59,7 @@ export default function ScrambledText(props: ScrambledTextProps ){
     }, speed);
 
     return () => clearInterval(interval);
-  }, [text, speed]);
+  }, [text, speed, inView]);
 
-  return <h1 className={className}>{displayedText}</h1>;
-};
-
+  return <h1 ref={ref} className={className}>{displayedText}</h1>;
+}

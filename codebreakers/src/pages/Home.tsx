@@ -1,6 +1,6 @@
 import TopScroll from "../components/TopScroll";
 import "../css/home.scss"
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 // import Navbar from "../components/Navbar";
 // import Footer from "../components/Footer";
 
@@ -23,6 +23,8 @@ gsap.registerPlugin(ScrollTrigger); // register the ScrollTrigger plugin
 export default function Home() {
     const headerRef = useRef<HTMLDivElement | null>(null); // useRef hook to store the element references
     const videoRef = useRef<HTMLVideoElement | null>(null);
+
+   
 
     const applyVideoEffects = (progress: number) => {
         if (!videoRef.current) return;
@@ -82,9 +84,9 @@ export default function Home() {
                         <ScrambledText text="ENIGMA" className="text-center text-white font-bold title header text-shadow-lg/45 fadeInUpLong" speed={30} />
 
 
-                        <ScrambledText text="The cipher that impacted millions of lives as the bloodline of World War II" className="text-center text-white font-bold subheader text-shadow-lg/45 fadeInUpLong" speed={30} />
+                        <ScrambledText text="The cipher and bloodline that impacted millions of lives from World War II" className="text-center text-white font-bold subheader text-shadow-lg/45 fadeInUpLong" speed={30} />
                         <NavLink to="/history"><TopScroll />
-                            <button className="flex m-auto p-3 pl-16 pr-16 border-2 border-solid border-white text-bold text-2xl font-bold rounded-md cursor-pointer hover:scale-105 transition-all text-white fadeInUpLong" id="home-button">
+                            <button className="hov-element flex m-auto p-3 pl-16 pr-16 border-2 border-solid border-white text-bold text-2xl font-bold rounded-md cursor-pointer hover:scale-110 transition-all text-white fadeInUpLong" id="home-button">
                                 <ScrambledText text="Get Started" speed={30} />
 
                             </button>
@@ -113,10 +115,10 @@ export default function Home() {
 
 
                         <div className="side-images">
-                            <NavLink to="/turing" className="cursor-pointer hover:scale-110 transition-all">
+                            <NavLink to="/turing" className="hov-element cursor-pointer hover:scale-110 rounded-2xl transition-all">
                                 <img className="side-image" src={Alan} />
                             </NavLink>
-                            <NavLink to="/machines" className="cursor-pointer hover:scale-110 transition-all">
+                            <NavLink to="/machines" className="hov-element  hov-element cursor-pointer rounded-2xl hover:scale-110 transition-all">
                                 <img className="side-image" src={Enigma1} />
                             </NavLink>
                         </div>
@@ -132,6 +134,7 @@ export default function Home() {
 
                             <div className="text-center center-section  p-10 border-white border-3 text-white 
                             font-semibold xl:text-xl lg:text-lg items-center">
+                                
                                 <p className="font-extrabold xl:text-2xl lg:text-xl pb-10">
 
                                     To what extent did deciphering the Enigma code
@@ -158,10 +161,13 @@ export default function Home() {
                         className="side-images"
                         delay={0.5}>
 
-                        <NavLink to="/machines" className="cursor-pointer hover:scale-110 transition-all">
+                        <NavLink to="/machines"
+                         className="cursor-pointer hov-element rounded-2xl hover:scale-110 transition-all"
+                         state={{ targetId: 'bombe' }}
+                         >
                             <img className="right-img" src={Bombe} />
                         </NavLink>
-                        <NavLink to="/history" className="cursor-pointer hover:scale-110 transition-all">
+                        <NavLink to="/history" className="cursor-pointer hov-element rounded-2xl hover:scale-110 transition-all">
                             <img className="right-img" src={Clock} />
                         </NavLink>
                     </ScrollAnimation>
@@ -176,10 +182,13 @@ export default function Home() {
                         duration={1}
                         className="side-images"
                         delay={1.5}>
-                        <h1 className="text-center text-white text-6xl mt-25 font-bold text-shadow-md/90 ">
-                            What is Enigma?
-                        </h1>
-                        <hr className="w-70 h-2 bg-white rounded-2xl m-auto mb-75 fadeInUp line" />
+                        <ScrambledText 
+                        text="What is Enigma"
+                         className="text-center text-white text-6xl mt-25 font-bold text-shadow-md/90 " 
+                         speed={30} 
+                         />
+                        
+                        <hr className="w-70 h-2 bg-white rounded-2xl m-auto mb-85 fadeInUp line" />
                     </ScrollAnimation>
                 </div>
 

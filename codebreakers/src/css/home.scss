@@ -52,6 +52,7 @@
 }
 
 #home-button:hover {
+    box-shadow: 0px 0px 50px white;
     background-color: white;
     color: black;
 }
@@ -99,4 +100,14 @@
     max-width: 450px;
     overflow: hidden;
     border: none;
+}
+
+.hov-element {
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    transition: 0.2s ease
+}
+
+.hov-element:hover {
+    box-shadow: 0px 0px 50px white;
+    transition: 0.2s ease
 }

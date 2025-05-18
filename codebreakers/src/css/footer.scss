@@ -26,6 +26,7 @@
     #footer-logo {
         display: flex;
         flex-grow: 0;
+        margin-bottom: 20vh;
         align-items: center;
         min-height: min-content;
         flex-shrink: 0;
@@ -56,12 +57,12 @@
 
 .sublink {
     color: white;
-    transition: 0.3s ease;
+    transition: 0.15s ease;
 }
 
 .sublink:hover {
-    transition: 0.3s ease;
-    transform: scale(200%);
+    transition: 0.15s ease;
+    transform: scale(135%);
 }
 
 .footer-items {
@@ -74,7 +75,7 @@
     transition: 0.1s ease;
     opacity: 1;
     text-shadow: 0px 0px 20px #ffffff;
-    scale: 110%;
+    scale: 120%;
 }
 
 .footer-title{
@@ -87,6 +88,16 @@
     opacity: 1;
     font-weight: bold;
     transition: 0.15s ease;
-    text-shadow: 0px 0px 20px #ffffff;
+    text-shadow: 0px 0px 10px #ffffff;
     scale: 110%;
+}
+
+.main-link {
+    color: white;
+    transition: 0.15s ease;
+}
+
+.main-link:hover {
+    transition: 0.15s ease;
+    transform: scale(150%);
 }
