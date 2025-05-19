@@ -41,6 +41,7 @@ export default function Bibliography() {
                 </p>
                 <iframe
                     className="doc"
+                    loading="lazy"
                     src="https://docs.google.com/document/d/e/2PACX-1vRQuZE9u9GbvV77yBdDk2TeBvG2OtuxTyRD4dqSViREbibsyZJ-2rLYx_XfFKST-N8k-h8n8zODEt1f/pub?embedded=true"
                 >
                 </iframe>
