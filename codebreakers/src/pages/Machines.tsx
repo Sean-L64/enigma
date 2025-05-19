@@ -74,7 +74,12 @@ export default function Machines() {
                     </p>
                     <NavLink to="/resources">
 
-                        <img src={Enigma} className="flex w-100 rounded-2xl history-img hover:scale-105 cursor-pointer fadeInUp" />
+                        <img
+                            src={Enigma}
+                            loading="lazy"
+                            className="flex w-100 rounded-2xl history-img hover:scale-105 cursor-pointer fadeInUp text-center text-2xl font-bold text-white"
+                            alt="loading..."
+                        />
                         <p className="text-white mt-5 text-center text-3xl font-bold  p-5 desc rounded-xl fadeInUp">
                             Enigma Machine
                         </p>
@@ -82,18 +87,18 @@ export default function Machines() {
                 </div>
                 <div id="bombe-machine" />
                 <div className="header">
-
                     <ScrollAnimation
-                        offset={0}
+                        offset={20}
                         animateOnce
-                        animateIn="backInUp"
+                        animateIn="fadeInUp"
                         duration={0.5}
                         delay={1}
                     >
 
+
                         <ScrambledText
                             text="The Bombe"
-                            className="text-center text-white text-6xl mt-40 mb-10 font-bold text-shadow-md/90 fadeInUp"
+                            className="text-center text-white text-6xl mt-20 mb-10 font-bold text-shadow-md/90 fadeInUp"
                             speed={20}
                         />
                         <hr className="w-150 h-2 bg-white rounded-2xl m-auto mb-10 fadeInUp line" />
@@ -102,13 +107,36 @@ export default function Machines() {
                 <div className="flex template-layout mt-20 justify-center flex-wrap ">
                     {/* more info needed for bombe */}
                     <div>
-                        <img src={Bombe} className="flex w-130 page-img rounded-2xl fadeInUp" />
-                        <p className="text-white mt-5 text-center text-3xl font-bold  p-5 desc rounded-xl fadeInUp">
-                            The Bombe Machine
-                        </p>
+                        <ScrollAnimation
+                            offset={20}
+                            animateOnce
+                            animateIn="fadeInUp"
+                            duration={0.75}
+                            delay={0.5}
+                        >
+
+                            <img
+                                src={Bombe}
+                                loading="lazy"
+                                className="flex w-130 page-img rounded-2xl font-bold history-img text-white text-center text-2xl"
+                                alt="loading..."
+                            />
+                        </ScrollAnimation>
+                        <ScrollAnimation
+                            offset={0}
+                            animateOnce
+                            animateIn="fadeInUp"
+                            duration={0.75}
+                            delay={0.5}
+                        >
+
+                            <p className="text-white mt-5 text-center text-3xl font-bold history-img p-5 desc rounded-xl">
+                                The Bombe Machine
+                            </p>
+                        </ScrollAnimation>
                     </div>
 
-                    <p className="flex  templates desc border-white border-4 rounded-xl p-8 text-2xl tracking-wide text-shadow-sm/45 text-white fadeInUp">
+                    <p className="flex  templates desc border-white border-4 rounded-xl p-8 text-2xl tracking-wide text-shadow-sm/45 text-white ">
                         The Bombe was a machine that was designed to accelerate the process of breaking Enigma settings
                         and the name "bombe" was derived from the Bomba machine made by the Poles.
                         Each Bombe machine had 12 sets of Enigma scramblers each connected so the machine can process more
@@ -119,16 +147,33 @@ export default function Machines() {
 
 
                     </p>
-                    <p
-                        className=" flex mt-10 m-auto ml-30 mr-30 desc border-white border-4 rounded-xl p-8 text-2xl 
-                    tracking-wide text-shadow-sm/45 text-white text-center  "
+                    <ScrollAnimation
+                        offset={0}
+                        animateOnce
+                        animateIn="fadeInUp"
+                        duration={0.75}
+                        delay={0.5}
                     >
-                        The most recent version of the Bombe had 100 rotating drums which were the rotating circular
-                        parts on the front of the machine. It also had about 16km or 10 miles worth of wire with 1 million
-                        soldered connections
+
+                        <p
+                            className=" flex mt-10 m-auto ml-30 mr-30 desc border-white border-4 rounded-xl p-8 text-2xl 
+                    tracking-wide text-shadow-sm/45 text-white text-center  "
+                        >
+                            The most recent version of the Bombe had 100 rotating drums which were the rotating circular
+                            parts on the front of the machine. It also had about 16km or 10 miles worth of wire with 1 million
+                            soldered connections. These machines played a key role in deciphering the Engima Codes
+                            and supplying military intelligence which was vital in the Allies' victory over Nazi Germany.
+                            The number of messages it could decode were about 39,000 intercepted messages a month which
+                            eventually rose to 84,000 a month as early as 1943.
+
+                            That's almost 2 messages per minute during day and night.
+
+                            The accomplishments leading up the the creation of this machine
+                            created a lasting impact on computer science and modern cryptography.
 
 
-                    </p>
+                        </p>
+                    </ScrollAnimation>
                 </div>
             </div>
         </>

@@ -27,7 +27,13 @@
         box-sizing: border-box;
         width: 40%;
         overflow: hidden;
-        transition: 0.25s ease;
+        transition: 0.2s ease;
+
+    }
+
+    .templates:hover {
+        transition: 0.2s ease;
+        box-shadow: 0px 0px 40px white;
     }
 
 }

@@ -29,7 +29,7 @@ export default function History() {
             }
         }
     }, [targetId, hash]);
-    
+
     return (
         <>
             <div className="history-page">
@@ -71,19 +71,21 @@ export default function History() {
 
                         <img
                             src={Bletchley}
-                            className="flex history-img fadeInUp border-white w-140 rounded-2xl hover:scale-110
+                            loading="lazy"
+                            alt="loading..."
+                            className="flex history-img fadeInUp text-white text-center text-2xl font-bold border-white w-140 rounded-2xl
                                 transition-all"
                         />
-                        <p className="text-white mt-5  fadeInUp text-center text-3xl font-bold  p-5 desc rounded-xl fadeInUp">
+                        <p className="text-white mt-5  text-center text-3xl font-bold  p-5 desc rounded-xl fadeInUp">
                             Bletchley Park
                         </p>
                     </div>
                     <ScrollAnimation
                         offset={0}
                         animateOnce
-                        animateIn="backInUp"
+                        animateIn="fadeInUp"
                         duration={0.75}
-                        delay={0.25}
+                        delay={0.5}
                     >
 
                         <p
@@ -113,51 +115,63 @@ export default function History() {
                         offset={0}
                         animateOnce
                         animateIn="fadeInUp"
-                        duration={0.5}
-                        delay={1}
+                        duration={0.75}
+                        delay={0.5}
                     >
 
                         <ScrambledText
                             text="The Enigma Machine"
-                            className="text-center text-white text-6xl mt-20 mb-10 font-bold text-shadow-md/90 fadeInUp"
+                            className="text-center text-white text-6xl mt-20 mb-10 font-bold text-shadow-md/90 "
                             speed={20}
                         />
-                        <hr className="w-150 h-2 bg-white rounded-2xl m-auto mb-10 fadeInUp line" />
+                        <hr className="w-150 h-2 bg-white rounded-2xl m-auto mb-10  line" />
                     </ScrollAnimation>
                 </div>
 
                 <div className="flex template-layout justify-center flex-wrap pl-20 pr-20" >
 
 
-                    <ScrollAnimation
-                        offset={0}
-                        animateOnce
-                        animateIn="fadeInUp"
-                        duration={0.75}
-                        delay={0.25}
-                    >
 
-                        <NavLink to="/machines">
+                    <NavLink to="/machines">
+                        <ScrollAnimation
+                            offset={0}
+                            animateOnce
+                            animateIn="fadeInUp"
+                            duration={0.75}
+                            delay={0.5}
+                        >
                             <img
                                 src={Enigma1}
-                                className="flex history-img border-white w-120 rounded-xl hover:scale-105
+                                loading="lazy"
+                                alt="loading..."
+                                className="flex history-img text-white text-2xl font-bold text-center border-white w-120 rounded-xl hover:scale-105
                                 transition-all"
                             />
-                            <p className="text-white mt-5 text-center text-3xl font-bold  p-5 desc rounded-xl fadeInUp">
+                        </ScrollAnimation>
+                        <ScrollAnimation
+                            offset={0}
+                            animateOnce
+                            animateIn="fadeInUp"
+                            duration={0.75}
+                            delay={0.5}
+                        >
+
+                            <p className="text-white mt-5 text-center text-3xl font-bold  p-5 desc rounded-xl ">
                                 Enigma Machine
                             </p>
+                        </ScrollAnimation>
 
-                        </NavLink>
-                    </ScrollAnimation>
-            
+                    </NavLink>
+
                     <p
                         className=" flex  templates desc border-white border-4 rounded-xl p-8 text-2xl 
-                    tracking-wide text-shadow-sm/45 text-white  fadeInUp "
+                    tracking-wide text-shadow-sm/45 text-white   "
                     >
                         The Enigma  machine was ready for commercial use in 1923 by Dr. Arthur Scherbius,
                         an engineer in Berlin who owned a company named Cipher Machines Corporation.
                         During the same time, the Germans purchased the patent for intelligence purposes
-                        most likely to start creating their own versions. The original Enigma
+                        most likely to start creating their own versions so contrary to popular belief, there wasn't just
+                        one Enigma machine. The original Enigma
                         model wasn't officially patented until 1928 but by then, Scherbius had been dead and his company has
                         been collapsing.  While it may look like the Enigma machine wouldn't do well or get many buyers, the story
                         seems to be the opposite at least compared to the commercial side.
@@ -169,9 +183,9 @@ export default function History() {
                     <ScrollAnimation
                         offset={0}
                         animateOnce
-                        animateIn="backInUp"
+                        animateIn="fadeInUp"
                         duration={0.75}
-                        delay={0.25}
+                        delay={0.5}
                     >
 
                         <p
@@ -209,16 +223,16 @@ export default function History() {
 
                         <ScrambledText
                             text="The Bombe"
-                            className="text-center text-white text-6xl mt-20 mb-10 font-bold text-shadow-md/90 fadeInUp"
+                            className="text-center text-white text-6xl mt-20 mb-10 font-bold text-shadow-md/90 "
                             speed={20} />
-                        <hr className="w-150 h-2 bg-white rounded-2xl m-auto mb-10 fadeInUp line" />
+                        <hr className="w-150 h-2 bg-white rounded-2xl m-auto mb-10  line" />
                     </ScrollAnimation>
                     <ScrollAnimation
                         offset={0}
                         animateOnce
                         animateIn="fadeInUp"
-                        duration={0.5}
-                        delay={1}
+                        duration={0.75}
+                        delay={0.5}
                     >
 
                         <p
@@ -234,7 +248,7 @@ export default function History() {
                 <div className="flex template-layout justify-center flex-wrap pl-20 pr-20">
                     {/* more info needed for bombe */}
 
-            
+
                     <p
                         className=" flex templates desc border-white border-4 rounded-xl p-8 text-2xl tracking-wide text-shadow-sm/45 text-white  "
                     >
@@ -250,28 +264,38 @@ export default function History() {
 
 
                     </p>
-                    <ScrollAnimation
-                        offset={0}
-                        animateOnce
-                        animateIn="fadeInUp"
-                        duration={0.5}
-                        delay={1}
-                    >
 
-                        <NavLink to="/machines"
-                            className="fadeInUp"
-                            state={{ targetId: 'bombe' }}
+                    <NavLink to="/machines"
+                        state={{ targetId: 'bombe' }}
+                    >
+                        <ScrollAnimation
+                            offset={0}
+                            animateOnce
+                            animateIn="fadeInUp"
+                            duration={0.75}
+                            delay={0.5}
                         >
                             <img
                                 src={Bombe}
+                                alt="loading..."
+                                loading="lazy"
                                 className="flex history-img border-white w-130 rounded-2xl hover:scale-110
-                                transition-all"
+                                transition-all text-white text-2xl font-bold"
                             />
-                            <p className="text-white mt-5 text-center text-3xl font-bold  p-5 desc rounded-xl fadeInUp">
+                        </ScrollAnimation>
+                        <ScrollAnimation
+                            offset={0}
+                            animateOnce
+                            animateIn="fadeInUp"
+                            duration={0.75}
+                            delay={0.5}
+                        >
+
+                            <p className="text-white mt-5 text-center text-3xl font-bold  p-5 desc rounded-xl ">
                                 The Bombe Machine
                             </p>
-                        </NavLink>
-                    </ScrollAnimation>
+                        </ScrollAnimation>
+                    </NavLink>
 
                 </div>
 

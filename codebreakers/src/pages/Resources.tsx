@@ -5,7 +5,7 @@ export default function Resources() {
     return (
         <>
             <div className="demo-page">
-                <div className="header-bg mb-20">
+                <div className="header-bg mb-10">
                     <ScrambledText
                         text="Enigma Resources & Demo"
                         className="text-center text-white text-6xl mb-10 font-bold text-shadow-md/90 fadeInUp"
@@ -40,6 +40,7 @@ export default function Resources() {
                         className="demo rounded-2xl border-4 border-gray-500"
                         src="https://cryptii.com/pipes/enigma-machine"
                         scrolling="no"
+                        loading="lazy"
                         width="100%"                
                         height="100%"     
                         >

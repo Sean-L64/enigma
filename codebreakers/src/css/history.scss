@@ -7,11 +7,11 @@
 
 .history-img,
 .desc {
-    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px 4px rgb(0, 0, 0);
     transition: 0.2s ease
 }
 
-.history-img:hover {
+.history-img:hover, .desc:hover{
     transition: 0.2s ease;
     box-shadow: 0px 0px 40px white;
 }

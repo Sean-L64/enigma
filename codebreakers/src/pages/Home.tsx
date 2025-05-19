@@ -9,7 +9,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import bgvid from "../media/placeholder.mp4"
 import Alan from "../media/turing.jpg"
 import Clock from "../media/clock.jpg"
-import Enigma1 from "../media/enigma1.webp"
+import WW2 from "../media/battle.webp"
+import Enigma from "../media/enigma.webp"
 import Bombe from "../media/bombe2.jpg"
 import ScrollAnimation from 'react-animate-on-scroll';
 import "animate.css/animate.compat.css";
@@ -24,7 +25,7 @@ export default function Home() {
     const headerRef = useRef<HTMLDivElement | null>(null); // useRef hook to store the element references
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
-   
+
 
     const applyVideoEffects = (progress: number) => {
         if (!videoRef.current) return;
@@ -115,11 +116,27 @@ export default function Home() {
 
 
                         <div className="side-images">
-                            <NavLink to="/turing" className="hov-element cursor-pointer hover:scale-110 rounded-2xl transition-all">
-                                <img className="side-image" src={Alan} />
+                            <NavLink
+                                to="/turing"
+                                className="hov-element cursor-pointer hover:scale-110 rounded-2xl transition-all"
+                            >
+                                <img
+                                    className="side-image font-bold text-2xl text-center text-white"
+                                    alt="loading..."
+                                    loading="lazy"
+                                    src={Alan}
+                                />
                             </NavLink>
-                            <NavLink to="/machines" className="hov-element  hov-element cursor-pointer rounded-2xl hover:scale-110 transition-all">
-                                <img className="side-image" src={Enigma1} />
+                            <NavLink
+                                to="/machines"
+                                className="hov-element  hov-element cursor-pointer rounded-2xl hover:scale-110 transition-all"
+                            >
+                                <img
+                                    className="side-image font-bold text-2xl text-center text-white"
+                                    alt="loading..."
+                                    loading="lazy"
+                                    src={Bombe}
+                                />
                             </NavLink>
                         </div>
                     </ScrollAnimation>
@@ -133,8 +150,9 @@ export default function Home() {
                             delay={0.5}>
 
                             <div className="text-center center-section  p-10 border-white border-3 text-white 
-                            font-semibold xl:text-xl lg:text-lg items-center">
-                                
+                            font-semibold xl:text-xl lg:text-lg items-center
+                            history-img">
+
                                 <p className="font-extrabold xl:text-2xl lg:text-xl pb-10">
 
                                     To what extent did deciphering the Enigma code
@@ -144,9 +162,9 @@ export default function Home() {
                                 <br />
                                 <p>
 
-                                    By deciphering the Enigma code, the Allied powers
-                                    had the ability to uncover military intellegence for
-                                    the Axis Powers to predict future attacks
+                                    Breaking the Enigma code helped bring
+                                    victory for the Allied Powers, allowing them to end the war quickly and save
+                                    countless lives.
                                 </p>
 
                             </div>
@@ -161,35 +179,85 @@ export default function Home() {
                         className="side-images"
                         delay={0.5}>
 
-                        <NavLink to="/machines"
-                         className="cursor-pointer hov-element rounded-2xl hover:scale-110 transition-all"
-                         state={{ targetId: 'bombe' }}
-                         >
-                            <img className="right-img" src={Bombe} />
+                        <NavLink
+                            to="/impact"
+                            className="cursor-pointer hov-element rounded-2xl hover:scale-110 transition-all"
+                        >
+                            <img
+                                className="text-center text-white font-bold text-2xl right-img"
+                                src={WW2}
+                                loading="lazy"
+                                alt="loading..."
+                            />
                         </NavLink>
-                        <NavLink to="/history" className="cursor-pointer hov-element rounded-2xl hover:scale-110 transition-all">
-                            <img className="right-img" src={Clock} />
+                        <NavLink
+                            to="/history"
+                            className="cursor-pointer hov-element rounded-2xl hover:scale-110 transition-all"
+                        >
+                            <img
+                                className="text-center text-white font-bold text-2xl right-img"
+                                src={Clock}
+                                loading="lazy"
+                                alt="loading..."
+                            />
                         </NavLink>
                     </ScrollAnimation>
 
                 </div>
-                <div className="header-bg mb-20">
+                <div className="header-bg mb-10">
 
                     <ScrollAnimation
                         offset={0}
                         animateIn="zoomInUp"
                         animateOnce
                         duration={1}
-                        className="side-images"
                         delay={1.5}>
-                        <ScrambledText 
-                        text="What is Enigma"
-                         className="text-center text-white text-6xl mt-25 font-bold text-shadow-md/90 " 
-                         speed={30} 
-                         />
-                        
-                        <hr className="w-70 h-2 bg-white rounded-2xl m-auto mb-85 fadeInUp line" />
+                        <ScrambledText
+                            text="What is Enigma?"
+                            className="text-center text-white text-6xl mt-25 font-bold text-shadow-md/90 "
+                            speed={30}
+                        />
+
+                        <hr className="w-70 h-2 bg-white rounded-2xl m-auto  mt-10 flex  line" />
                     </ScrollAnimation>
+                </div>
+                <div className="flex template-layout justify-center flex-wrap mb-20">
+
+                    <ScrollAnimation
+                        offset={0}
+                        animateIn="fadeInUp"
+                        animateOnce
+                        className=" flex  ml-50 mr-50  desc border-gray-500 border-1 rounded-xl p-8 text-2xl mb-60 font-bold
+                    tracking-wide text-shadow-sm/45 text-white text-center history-img"
+                        duration={1}
+                        delay={2}>
+
+                        <p
+                        >
+                            Enigma was a cipher that was primariy used by Germany military to send encrypted messages
+                            making it supposedly impossible for anyone else to intercept and read them.
+                            <br /><br />
+                            Click the image below to start learning
+                            <IoIosArrowDown className="text-white m-auto flex text-center text-shadow-lg/45 mt-10 animate-bounce down" />
+
+
+                    <NavLink
+                        to="/history"
+                        className="m-auto flex self-center justify-center"
+                        state={{ targetId: "enigma-history" }}
+                    >
+
+
+                        <img
+                            src={Enigma}
+                            className="h-100 rounded-lg history-img hover:scale-110"
+                        />
+                    </NavLink>
+                        </p>
+                    </ScrollAnimation>
+
+
+
                 </div>
 
 

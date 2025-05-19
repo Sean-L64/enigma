@@ -42,26 +42,26 @@ export default function Navbar() {
                                 </NavLink>
                             </button>
                             <div className="dropdown absolute left-1/2 transform -translate-x-1/2
-                             mt-2 w-42 text-center border border-gray-500 rounded-xl shadow-lg 
+                             mt-2 w-42 text-center border border-gray-500 rounded-lg shadow-lg 
                             group-hover:opacity-100 backdrop-blur-md opacity-0 text-lg
                             invisible group-hover:visible transition duration-300 z-50 ease-out">
                                 <NavLink
                                     to="/history"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                     state={{ targetId: 'ultra' }}
                                 >
                                     Project Ultra
                                 </NavLink>
                                 <NavLink
                                     to="/history"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                     state={{ targetId: 'enigma-history' }}
                                 >
                                     Enigma Machine
                                 </NavLink>
                                 <NavLink
                                     to="/history"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                     state={{ targetId: 'bombe' }}
                                 >
                                     The Bombe
@@ -77,19 +77,19 @@ export default function Navbar() {
                                 </NavLink>
                             </button>
                             <div className="dropdown absolute left-1/2 transform -translate-x-1/2
-                             mt-2 w-42 text-center border border-gray-500 rounded-xl shadow-lg 
+                             mt-2 w-42 text-center border border-gray-500 rounded-lg shadow-lg 
                             group-hover:opacity-100 backdrop-blur-md opacity-0 text-lg
                             invisible group-hover:visible transition duration-300 z-50 ease-out">
                                 <NavLink
                                     to="/machines"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                     state={{targetId: 'enigma-machine'}}
                                 >
                                     Enigma
                                 </NavLink>
                                 <NavLink
                                     to="/machines"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                     state={{targetId: 'bombe-machine'}}
                                 >
                                     The Bombe
@@ -117,16 +117,16 @@ export default function Navbar() {
                                 </NavLink>
                             </button>
                             <div className="dropdown absolute left-1/2 transform -translate-x-1/2
-                             mt-2 w-42 text-center border border-gray-500 rounded-xl shadow-lg 
+                             mt-2 w-42 text-center border border-gray-500 rounded-lg shadow-lg 
                             group-hover:opacity-100 backdrop-blur-md opacity-0 text-lg
                             invisible group-hover:visible transition duration-300 z-50 ease-out">
                                 <NavLink to="/turing"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                 >
                                     Alan Turing
                                 </NavLink>
                                 <NavLink to="/rejewski"
-                                    className="block px-4 py-6 hover:bg-gray-100 rounded-lg hover:text-black"
+                                    className="block px-4 py-6 hover:bg-gray-100 rounded-md hover:text-black"
                                 >
                                     Marian Rejewski
                                 </NavLink>
