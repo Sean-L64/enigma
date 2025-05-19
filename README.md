@@ -6,7 +6,7 @@ This website is based off of TypeScript React using the [Vite](https://vite.dev)
 It uses [SCSS](https://sass-lang.com) and [TailwindCSS](https://tailwindcss.com) for styling. 
 For more information on React components or hooks, visit [react.dev](https://react.dev) for more information.
 
-Any assets, pages, css, components, media, routing, and other external parts are imported into each React TSX file.
+Any assets, pages, css, components, media, routing, and other external hooks or APIs are imported into each React TSX file.
 
 ## Main Tools (can be found in package.json & package-lock.json files)
 - [React](https://react.dev)
@@ -23,5 +23,6 @@ Any assets, pages, css, components, media, routing, and other external parts are
 
 ## How to run this program
 1. Clone the GitHub repository via URL or run `git clone https://github.com/Sean-L64/enigma`
-2. Run `npm i`
-3. Run `npm run dev`
+2. cd Codebreakers folder
+3. Run `npm i`
+4. Run `npm run dev`
