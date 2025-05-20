@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/next"
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -33,6 +34,8 @@ export default function App() {
         <Route path="/rejewski" element={<Rejewski />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/bibliography" element={<Bibliography />} />
+        <Analytics />
+
       </Routes>
       <Footer />
     </BrowserRouter>
