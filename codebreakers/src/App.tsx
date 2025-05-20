@@ -21,6 +21,7 @@ import Activate from "./components/Activate";
 export default function App() {
   return (
     <BrowserRouter>
+    <Analytics />
       <Navbar />
       <Activate />
       <Routes>
@@ -34,7 +35,6 @@ export default function App() {
         <Route path="/rejewski" element={<Rejewski />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/bibliography" element={<Bibliography />} />
-        <Analytics />
 
       </Routes>
       <Footer />
