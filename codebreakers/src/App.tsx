@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/react';
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -21,7 +21,6 @@ import Activate from "./components/Activate";
 export default function App() {
   return (
     <BrowserRouter>
-    <Analytics />
       <Navbar />
       <Activate />
       <Routes>
